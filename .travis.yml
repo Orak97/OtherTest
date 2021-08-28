@@ -1,4 +1,12 @@
 language: java
 jdk:
   -openjdk11
-script: ant build
+
+addons:
+  sonarcloud:
+    organization: orak97
+    token:
+      secure: cf42e4bd4afe09e704ee9b0c04260c443380a667
+script:
+-ant build
+-sonar scanner
