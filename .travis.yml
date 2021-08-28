@@ -6,7 +6,7 @@ addons:
   sonarcloud:
     organization: orak97
     token:
-      secure: cf42e4bd4afe09e704ee9b0c04260c443380a667
+      secure: ffed6981c760a2daf9bb133deafe237f59a1c7de
 script:
 -ant build
 -sonar scanner
