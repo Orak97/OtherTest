@@ -4,9 +4,8 @@ jdk:
 
 addons:
   sonarcloud:
-    organization: orak97
-    token:
-      secure: ffed6981c760a2daf9bb133deafe237f59a1c7de
+    organization: "orak97"
+    token: "ffed6981c760a2daf9bb133deafe237f59a1c7de"
 
 script:
   -ant build
