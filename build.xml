@@ -26,22 +26,23 @@
         <pathelement location="build/classes"/>
         <path refid="Web App Libraries.libraryclasspath"/>
         <path refid="EAR Libraries.libraryclasspath"/>
-        <pathelement location="../../eclipse-workspace/Dovado/json-simple-1.1.1.jar"/>
         <pathelement location="../Dovado/WebContent/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar"/>
         <path refid="JavaFX.userclasspath"/>
+        <pathelement location="../../eclipse-workspace/Dovado/json-simple-1.1.1.jar"/>
     </path>
     <path id="run.Main (3).classpath">
         <path refid="OtherTest.classpath"/>
         <path refid="Web App Libraries.libraryclasspath"/>
         <path refid="EAR Libraries.libraryclasspath"/>
-        <pathelement location="../../eclipse-workspace/Dovado/json-simple-1.1.1.jar"/>
         <pathelement location="../Dovado/WebContent/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar"/>
         <path refid="JavaFX.userclasspath"/>
+        <pathelement location="../../eclipse-workspace/Dovado/json-simple-1.1.1.jar"/>
     </path>
     <target name="init">
         <mkdir dir="build/classes"/>
         <copy includeemptydirs="false" todir="build/classes">
             <fileset dir="src">
+                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
