@@ -11,10 +11,32 @@
     <property name="source" value="11"/>
     <path id="Web App Libraries.libraryclasspath"/>
     <path id="EAR Libraries.libraryclasspath"/>
+    <path id="JavaFX.userclasspath">
+        <pathelement location="../../../../Program Files/Java/javaFx/javafx-sdk-16/lib/javafx.base.jar"/>
+        <pathelement location="../../../../Program Files/Java/javaFx/javafx-sdk-16/lib/javafx.controls.jar"/>
+        <pathelement location="../../../../Program Files/Java/javaFx/javafx-sdk-16/lib/javafx.fxml.jar"/>
+        <pathelement location="../../../../Program Files/Java/javaFx/javafx-sdk-16/lib/javafx.graphics.jar"/>
+        <pathelement location="../../../../Program Files/Java/javaFx/javafx-sdk-16/lib/javafx.media.jar"/>
+        <pathelement location="../../../../Program Files/Java/javaFx/javafx-sdk-16/lib/javafx.swing.jar"/>
+        <pathelement location="../../../../Program Files/Java/javaFx/javafx-sdk-16/lib/javafx.web.jar"/>
+        <pathelement location="../../../../Program Files/Java/javaFx/javafx-sdk-16/lib/javafx-swt.jar"/>
+        <pathelement location="../../../../Program Files/Java/javaFx/javafx-sdk-16/lib/src.zip"/>
+    </path>
     <path id="OtherTest.classpath">
         <pathelement location="build/classes"/>
         <path refid="Web App Libraries.libraryclasspath"/>
         <path refid="EAR Libraries.libraryclasspath"/>
+        <pathelement location="../../eclipse-workspace/Dovado/json-simple-1.1.1.jar"/>
+        <pathelement location="../Dovado/WebContent/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar"/>
+        <path refid="JavaFX.userclasspath"/>
+    </path>
+    <path id="run.Main (3).classpath">
+        <path refid="OtherTest.classpath"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+        <pathelement location="../../eclipse-workspace/Dovado/json-simple-1.1.1.jar"/>
+        <pathelement location="../Dovado/WebContent/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar"/>
+        <path refid="JavaFX.userclasspath"/>
     </path>
     <target name="init">
         <mkdir dir="build/classes"/>
@@ -50,5 +72,11 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
+    </target>
+    <target name="Main (3)">
+        <java classname="logic.view.Main" failonerror="true" fork="yes">
+            <jvmarg line="--module-path &quot;C:\Program Files\Java\javaFx\javafx-sdk-16\lib&quot; --add-modules javafx.controls,javafx.fxml"/>
+            <classpath refid="run.Main (3).classpath"/>
+        </java>
     </target>
 </project>
